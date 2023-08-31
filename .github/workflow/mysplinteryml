@@ -1,0 +1,19 @@
+Name: my=splinter 
+
+On: Push 
+
+Jobs: 
+
+Splinter: 
+
+Name: Lint Coide Base 
+Runons: Ubantu latest 
+ Steps: 
+   Name: Check out code 
+   useses: actions Checkout v2
+ 
+    Name: Run splinter
+    Uses: github splinter
+     env: 
+      Default-branch: main 
+         Github-token: $ {{ Secret.github-token }}
